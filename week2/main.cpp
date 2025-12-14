@@ -43,7 +43,7 @@ public:
         stackSize = 0;
     }
 
-    void push_back(int data) {
+    void push(int data) {
         Node *node = new Node(data);
         node -> next = topNode;
         topNode = node;
@@ -94,7 +94,7 @@ public:
 
     void push(int data) {
         Node *node = new Node(data);
-        if (rear != NULL) {
+        if (rear == NULL) {
             front = rear = node;
         } else {
             rear -> next = node;
@@ -106,7 +106,7 @@ public:
     void pop() {
 
         if (empty()) {
-            runtime_error("Queue Underflow");
+            throw runtime_error("Queue Underflow");
         }
 
         Node *temp = front;
@@ -169,7 +169,7 @@ public:
     void pop_front() {
 
         if (empty()) {
-            runtime_error("Queue Underflow");
+            throw runtime_error("Queue Underflow");
         }
 
         DequeNode *temp = front;
@@ -242,7 +242,7 @@ public:
         return dequeSize;
     }
 
-    
+
 
 
 };
