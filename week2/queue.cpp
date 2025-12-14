@@ -1,6 +1,26 @@
 #include <iostream>
 using namespace std;
 
+/*
+ * QUEUE - Time & Space Complexity
+ * ===============================
+ * Accessing (front/rear): O(1)
+ * Inserting (push):       O(1)
+ * Deleting (pop):         O(1)
+ * Searching:              O(n)
+ * Space:                  O(n)
+ */
+
+/*
+ * DEQUE - Time & Space Complexity
+ * ===============================
+ * Accessing (front/rear): O(1)
+ * Inserting (both ends):  O(1)
+ * Deleting (both ends):   O(1)
+ * Searching:              O(n)
+ * Space:                  O(n)
+ */
+
 
 class Node {
 public:
@@ -64,7 +84,6 @@ public:
         front = front -> next;
 
         if (front == NULL) {
-            cout << "WHEN FRONT IS NULL: " << rear -> data;
             rear = NULL;
         }
 
@@ -79,15 +98,13 @@ public:
         return front -> data;
     }
 
-    int getFront() {
-        return front -> data;
+    int size() {
+        return queueSize;
     }
 
     bool empty() {
         return (queueSize == 0);
     }
-
-
 };
 
 

@@ -1,6 +1,18 @@
 #include <iostream>
 using namespace std;
 
+
+/*
+ * STACK - Time & Space Complexity
+ * ================================
+ * Accessing (top):    O(1)
+ * Inserting (push):   O(1)
+ * Deleting (pop):     O(1)
+ * Searching:          O(n)
+ * Space:              O(n)
+ */
+
+
 class Node {
 public:
     Node *next;
