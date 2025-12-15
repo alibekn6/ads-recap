@@ -23,9 +23,6 @@ int get_hash(string s) {
 
 // Given an array of n strings, find all pairs of identical strings.
 
-
-
-
 int main () {
 
     int n;
