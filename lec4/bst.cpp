@@ -13,9 +13,6 @@ Space complexity: O(n) for storing n nodes
 
 In-order traversal of a BST gives elements in sorted order
 
-
-
-
 */
 
 
@@ -126,8 +123,6 @@ public:
                 node->left = deleteNode(node->left, temp->data);
             }
         }
-
-
 
     }
 
