@@ -61,6 +61,16 @@ private:
     }
 
 
+    Node* destroyTree(Node* root) {
+        if (root == nullptr) return;
+        destroyTree(root->left);
+        destroyTree(root->right);
+        delete root;
+    }
+
+
+
+
 
     Node* deleteHelper(Node* root, int key) {
 
@@ -127,9 +137,26 @@ private:
 
     }
 
+public:
+    bst() {
+        root = nullptr;
+    }
 
+    ~bst() {
+        destroyTree(root);
+    }
 
+    void insert(int value) {
+        root = insertHelper(root, value);
+    }
 
+    void remove(int value) {
+        root = deleteHelper(root, value);
+    }
+
+    bool search(int value) {
+        return searchHelper(root, value);
+    }
 
 
 
