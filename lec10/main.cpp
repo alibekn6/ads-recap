@@ -19,6 +19,7 @@ public:
     void addEdge(int u, int v) {
         adj[u].push_back(v);
         adj[v].push_back(u);
+        
     }
 
     void BFS(int start) {
@@ -37,8 +38,6 @@ public:
             q.pop();
             
             cout << current << " ";
-
-
              
             for (int i = 0; i < adj[current].size(); i++) {
                 int u = adj[current][i];
@@ -48,16 +47,40 @@ public:
                 }
             }
 
-            // for (int neighbor : adj[current]) {
-            //     if (!visited[neighbor]) {
-            //         visited[neighbor] = true;
-            //         q.push(neighbor);
-            //     }
-            // }
         }
 
         cout << endl;
     }
+
+
+
+    void BFS(int start) {
+        vector<bool> visited(v, false);
+        queue<int> q;
+
+        visited[start] = true;
+        q.push(start);
+
+        while (!q.empty()) {
+            int current = q.front(); // H
+            q.pop();
+
+            for (int i = 0; i < adj[current].size(); i++) {
+
+                int u = adj[current][i];
+
+                if (!visited[u]) {
+                    q.push(u);
+                    visited[u] = true;
+                }
+
+            }
+        }
+
+
+        // [h] = true; 
+    }
+
 
     void bfs_path(int start) {
         vector<int> dist(v, -1);
